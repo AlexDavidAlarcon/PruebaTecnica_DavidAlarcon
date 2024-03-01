@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div class="field-card">
+        <h1>Iniciar Sesión</h1>
+        <mat-form-field class="campo">
+            <mat-label>Número de cédula</mat-label>
+            <input matInput [formControl]="personaForm.cedula" required>
+            @if (personaForm.cedula.invalid) {
+              <mat-error>{{getRequiredErrorMessage()}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="campo">
+            <mat-label>Confirmar contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide"  [formControl]="personaForm.clave">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            @if (personaForm.clave.invalid) {
+              <mat-error>{{getRequiredErrorMessage()}}</mat-error>
+            }
+          </mat-form-field>
+        <button mat-raised-button color="primary">Iniciar Sesión</button>
+        <button mat-raised-button color="primary" routerLink="residentes/auth">Nuevo Residente</button>
+    </div>
+</div>

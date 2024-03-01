@@ -1,0 +1,29 @@
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(to right bottom, #051937, #1d2d57, #374379, #54599c, #746fc0);
+
+    .field-card {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+
+        padding: 2rem;
+        width: 20rem;
+        background-color: white;
+        border-radius: 1rem;
+
+        .campo {
+            width: 100% !important;
+        }
+    }
+}

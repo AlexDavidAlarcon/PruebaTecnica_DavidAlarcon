@@ -1,0 +1,51 @@
+<div class="main-container">
+    <div class="field-card">
+        <h1>Residente Nuevo</h1>
+        <mat-form-field class="campo">
+            <mat-label>Nombre</mat-label>
+            <input matInput [formControl]="personaForm.nombre" required>
+            @if (personaForm.nombre.invalid) {
+              <mat-error>{{getRequiredErrorMessage()}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="campo">
+            <mat-label>Apellido</mat-label>
+            <input matInput [formControl]="personaForm.apellido" required>
+            @if (personaForm.apellido.invalid) {
+              <mat-error>{{getRequiredErrorMessage()}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="campo">
+            <mat-label>Número de cédula</mat-label>
+            <input matInput [formControl]="personaForm.cedula" required>
+            @if (personaForm.cedula.invalid) {
+              <mat-error>{{getRequiredErrorMessage()}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="campo">
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput placeholder="correo@example.com" [formControl]="personaForm.correo" required>
+            @if (personaForm.correo.invalid) {
+              <mat-error>{{getEmailErrorMessage()}}</mat-error>
+            }
+          </mat-form-field>
+        <mat-form-field class="campo">
+            <mat-label>Placa del Vehículo</mat-label>
+            <input matInput [formControl]="personaForm.placaVehiculo" required>
+            @if (personaForm.placaVehiculo.invalid) {
+              <mat-error>{{getRequiredErrorMessage()}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="campo">
+            <mat-label>Confirmar contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide"  [formControl]="personaForm.clave">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            @if (personaForm.clave.invalid) {
+              <mat-error>{{getRequiredErrorMessage()}}</mat-error>
+            }
+          </mat-form-field>
+        <button mat-raised-button color="primary">Registrar</button>
+    </div>
+</div>
